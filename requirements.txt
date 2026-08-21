@@ -1,0 +1,12 @@
+# Notebook environment
+jupyter
+ipykernel
+
+# Data analysis and visualization
+numpy
+pandas
+matplotlib
+seaborn
+
+# Machine learning
+scikit-learn
