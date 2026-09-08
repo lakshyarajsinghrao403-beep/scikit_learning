@@ -1,66 +1,86 @@
 # Scikit-learn Learning Journey
 
-A hands-on collection of Jupyter notebooks created while learning machine learning with Python and [scikit-learn](https://scikit-learn.org/).
+A hands-on collection of Jupyter notebooks for learning core machine-learning workflows with Python and [scikit-learn](https://scikit-learn.org/). Each notebook focuses on one concept, from preparing data to training, evaluating, and tuning classification and regression models.
 
-## Topics covered
+## What you'll find
 
-### Data preparation
+- Data splitting, missing-value imputation, feature scaling, and categorical encoding
+- Column-wise preprocessing with `make_column_transformer`
+- Regression and classification with linear regression, logistic regression, KNN, decision trees, and support vector machines
+- Model evaluation with confusion matrices, classification reports, K-fold cross-validation, and `cross_val_score`
+- Hyperparameter tuning with `GridSearchCV` and `RandomizedSearchCV`
 
-- Train/test splitting
-- Handling missing values with `SimpleImputer`
-- Feature scaling with `StandardScaler` and `MinMaxScaler`
-- One-hot and ordinal encoding
-- Column transformations
+## Repository structure
 
-### Machine-learning models
+| Notebook | Topic |
+| --- | --- |
+| `train_test_split.ipynb` | Splitting a dataset into training and test sets |
+| `simple_imputer.ipynb` | Handling missing values with `SimpleImputer` |
+| `featurescaling.ipynb` | Standardization with `StandardScaler` and normalization with `MinMaxScaler` |
+| `onehotencoding.ipynb` | Encoding nominal categories with `OneHotEncoder` |
+| `ordinalencoding.ipynb` | Encoding ordered categories with `OrdinalEncoder` |
+| `columntransformer.ipynb` | Applying different transformations to selected columns |
+| `linear_regression.ipynb` | Linear-regression fundamentals |
+| `logisticregression.ipynb` | Binary classification with logistic regression |
+| `logistic_multiclass.ipynb` | Multiclass classification with logistic regression on the digits dataset |
+| `KNN.ipynb` | K-nearest-neighbours classification and evaluation |
+| `decisiontree.ipynb` | Decision-tree classification and evaluation |
+| `supportvectormachine.ipynb` | Support vector machine classification on the Iris dataset |
+| `K-foldcrossvalidation.ipynb` | K-fold cross-validation and `cross_val_score` |
+| `GridSearchCV.ipynb` | Grid-search hyperparameter tuning for an SVM |
+| `RandomSearchCV.ipynb` | Randomized-search hyperparameter tuning for an SVM |
 
-- Linear regression
-- Logistic regression
-- K-nearest neighbours (KNN)
-- Decision trees
-- Random forests
+## Datasets
 
-The classification notebooks also explore evaluation tools such as confusion matrices and classification reports.
+- `500hits.csv` — local practice dataset used in the train/test split, feature-scaling, KNN, and decision-tree notebooks.
+- Built-in scikit-learn datasets — the Iris and digits datasets are used in selected notebooks.
+- Seaborn's Iris dataset — used in the hyperparameter-tuning notebooks; it is fetched when the notebooks run.
 
 ## Getting started
 
-1. Clone this repository and open its folder.
-2. Create and activate a virtual environment (recommended).
-3. Install the dependencies:
+### 1. Clone the repository
 
-   ```bash
-   pip install -r requirements.txt
-   ```
+```bash
+git clone <your-repository-url>
+cd scikit_learn
+```
 
-4. Start Jupyter Notebook:
+### 2. Create and activate a virtual environment
 
-   ```bash
-   jupyter notebook
-   ```
+```bash
+python -m venv .venv
+```
 
-5. Open any `.ipynb` file and run the cells in order.
+**Windows (PowerShell)**
 
-## Repository contents
+```powershell
+.venv\Scripts\Activate.ps1
+```
 
-| File | What it covers |
-| --- | --- |
-| `train_test_split.ipynb` | Splitting a dataset for training and testing |
-| `simple_imputer.ipynb` | Filling in missing values |
-| `featurescaling.ipynb` | Standardization and normalization |
-| `onehotencoding.ipynb` / `ordinalencoding.ipynb` | Encoding categorical features |
-| `columntransformer.ipynb` | Applying transformations to selected columns |
-| `linear_regression.ipynb` | Linear regression |
-| `logisticregression.ipynb` | Logistic-regression classification |
-| `KNN.ipynb` | K-nearest-neighbours classification |
-| `decisiontree.ipynb` | Decision-tree classification |
-| `randomforest.ipynb` | Random-forest classification |
+**macOS/Linux**
 
-## Dataset
+```bash
+source .venv/bin/activate
+```
 
-`500hits.csv` is used by selected notebooks for practice.
+### 3. Install dependencies
+
+```bash
+pip install -r requirements.txt
+```
+
+### 4. Launch Jupyter
+
+```bash
+jupyter notebook
+```
+
+Open any `.ipynb` file and run its cells from top to bottom. A few notebooks download example datasets, so an internet connection may be needed the first time they run.
+
+## Requirements
+
+The project uses Python with Jupyter, NumPy, pandas, Matplotlib, Seaborn, and scikit-learn. The complete dependency list is in [`requirements.txt`](requirements.txt).
 
 ## Notes
 
-This is a learning repository. The notebooks prioritize clear experimentation and practice over production-ready machine-learning pipelines.
-
-## there are more topics and lot to cover in this journey yet.
+This is a learning repository focused on small, clear experiments rather than production-ready pipelines. The notebooks are designed to be explored independently, though working through them in the order listed above will give the smoothest progression.
